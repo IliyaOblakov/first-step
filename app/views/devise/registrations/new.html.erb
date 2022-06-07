@@ -1,3 +1,8 @@
+<div class="page">
+<div class="banner">
+  <img src="footprint.png" alt="another step">
+</div>
+
 <h2>Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
@@ -37,5 +42,5 @@
     <%= f.button :submit, "Sign up" %>
   </div>
 <% end %>
-
+</div>
 <%= render "devise/shared/links" %>
