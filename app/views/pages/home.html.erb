@@ -1,4 +1,11 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+<% if current_user.present? == false %>
   <%= link_to "Seek Help", new_user_registration_path( status: { status:"seeker"} ) %>
   <%= link_to "offer help", new_user_registration_path( status: { status:"guide"} ) %>
+  <%= link_to "log in", user_session_path %>
+<% end %>
+
+<% if current_user.present?%>
+  <%= link_to "log out", destroy_user_session_path, data: {turbo_method: :delete}%>
+<% end %>
