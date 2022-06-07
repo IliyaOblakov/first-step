@@ -1,0 +1,10 @@
+<div class="container mt-3">
+<h1>Thanks for your booking</h1>
+<h2><%= "Hi #{current_user.first_name}" %></h2>
+<p>Start Chat</p>
+
+<%= link_to "Delete Booking",
+    bookings_path(@booking),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-outline-primary"
+  %>
+</div>
