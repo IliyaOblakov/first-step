@@ -12,11 +12,16 @@ class BookingsController < ApplicationController
     redirect_to booking_path(@booking)
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to root
+    redirect_to root_path
   end
+
   private
 
   def booking_params
