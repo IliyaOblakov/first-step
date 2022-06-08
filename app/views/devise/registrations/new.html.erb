@@ -21,11 +21,11 @@
                 autofocus: true,
                 input_html: { autocomplete: "location" } %>
     <% if params[:status][:status] == "guide" %>
-    <%= f.input :is_guide, disabled: true,
-                required: false,
+    <%= f.input :is_guide, disabled: false,
+                required: true,
                 autofocus: true,
-                input_html: { checked: true } %>
-                <% end %>
+                input_html: { checked: true , style: "display: none;" }%>
+    <% end %>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -38,6 +38,5 @@
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
   </div>
-
 <% end %>
 <%= render "devise/shared/links" %>
