@@ -1,0 +1,126 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #F79563;
+  bottom: 0;
+  padding-left: 40px;
+  right: 0;
+  color: rgb(9, 4, 4);
+}
+
+.footer-top {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+  justify-content: space-around;
+}
+
+h5 {
+  text-align: center;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+}
+/*links*/
+.links-section {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.links-header {
+  font-weight: bold;
+  font-size: 14px;
+}
+.links-list {
+  display: flex;
+  flex-direction: column;
+}
+#company-links,
+#discover-links {
+  margin-right: 20px;
+}
+#mobile-links {
+  display: none;
+  width: 50%;
+  justify-content: space-between;
+  margin: 20px auto;
+}
+.link-item {
+  color: rgb(7, 6, 6);
+  font-size: .8em;
+  text-decoration: none;
+}
+.link-item:hover {
+  text-decoration: none;
+  color: rgba(253, 160, 160, 0.5);
+}
+.footer-bar {
+  margin: auto;
+  border-bottom: 1px solid #777;
+  width: 80%;
+}
+.join {
+  text-align: center;
+  font-size: 14px;
+}
+.socialIcons-section {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: auto;
+}
+.circle {
+  position: relative;
+  border: 1px solid #666;
+  width: 36px;
+  height: 36px;
+  border-radius: 50px;
+}
+.icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1em;
+  color: #451E5D;
+}
+.icon:hover {
+  color: grey;
+}
+.copywright {
+  text-align: center;
+  font-size: .8em;
+  color: white;
+}
+@media only screen and (max-width: 745px) {
+  .links-section,
+  .join,
+  .footer-bar {
+    display: none;
+  }
+  .dropdown-section {
+    width: 100%;
+  }
+  #mobile-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .socialIcons-section {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 415px) {
+  .socialIcons-section {
+    width: 80%;
+    font-size: .7em;
+  }
+  .circle {
+    width: 30px;
+    height: 30px;
+  }
+}
