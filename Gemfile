@@ -29,6 +29,9 @@ gem "jbuilder"
 
 gem "devise"
 
+gem 'rack-cors'
+gem "pry-byebug"
+gem "dotenv"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
