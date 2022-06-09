@@ -22,5 +22,8 @@ export default class extends Controller {
     resetForm(event) {
       event.target.reset()
     }
-
+    disconnect() {
+      console.log("Unsubscribed from the chatroom")
+      this.channel.unsubscribe()
+    }
 }

@@ -1,9 +1,17 @@
 <div class="container mt-3">
-<h1>Thanks for your booking</h1>
+<h1>Thanks for your bookings</h1>
 <h2><%= "Hi #{current_user.first_name}" %></h2>
 <h2><%= "Your guide is #{@booking.user_guide.first_name}" %></h2>
 
-<p class="btn btn-outline-danger">Start Chat</p>
+<%  if @booking.chatrooms.first.nil? %>
+
+    <%= simple_form_for [@booking, @chatroom] do |f| %>
+      <%= f.button :submit, class: "btn btn-outline-danger" %>
+    <% end %>
+    <% else %>
+    <%= link_to 'Chat now!', booking_chatroom_path(@booking, @booking.chatrooms.first) %>
+    <% end %>
+
 
 
 
