@@ -6,10 +6,10 @@
 <%  if @booking.chatrooms.first.nil? %>
 
     <%= simple_form_for [@booking, @chatroom] do |f| %>
-      <%= f.button :submit, class: "btn btn-outline-danger" %>
+      <%= f.button :submit, class: "btn btn-outline-primary" %>
     <% end %>
     <% else %>
-    <%= link_to 'Chat now!', booking_chatroom_path(@booking, @booking.chatrooms.first) %>
+    <%= link_to "Chat now!", booking_chatroom_path(@booking, @booking.chatrooms.first), class: "btn btn-outline-primary" %>
     <% end %>
 
 
@@ -17,6 +17,6 @@
 
 <%= link_to "Delete Booking",
     booking_path(@booking),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-outline-primary"
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-outline-danger"
   %>
 </div>
