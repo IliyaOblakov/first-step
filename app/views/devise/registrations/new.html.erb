@@ -5,6 +5,7 @@
 
           <h2 class="signup">Sign up</h2>
 
+<<<<<<< HEAD
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
             <%= f.error_notification %>
             <div class="form-inputs">
@@ -58,3 +59,42 @@
     </div>
     <%= image_tag 'feetup.png', class: "footsteps-down" %>
   </div>
+=======
+  <div class="form-inputs">
+    <%= f.input :email,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "email" }%>
+    <%= f.input :first_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "First Name" } %>
+     <%= f.input :last_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Last Name" } %>
+    <%= f.input :location,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "location" } %>
+    <% if params[:status][:status] == "guide" %>
+    <%= f.input :is_guide, disabled: false,
+                required: true,
+                autofocus: true,
+                input_html: { checked: true , style: "display: none;" }%>
+    <% end %>
+    <%= f.input :password,
+                required: true,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :password_confirmation,
+                required: true,
+                input_html: { autocomplete: "new-password" } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up" %>
+  </div>
+<% end %>
+<%= render "devise/shared/links" %>
+>>>>>>> ec65229767413d647cdd22e9467e3bc8adc82c12

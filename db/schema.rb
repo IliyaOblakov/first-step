@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_07_111943) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_08_114157) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_07_111943) do
     t.datetime "updated_at", null: false
     t.index ["user_guide_id"], name: "index_bookings_on_user_guide_id"
     t.index ["user_seeker_id"], name: "index_bookings_on_user_seeker_id"
+  end
+
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,4 +58,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_07_111943) do
 
   add_foreign_key "bookings", "users", column: "user_guide_id"
   add_foreign_key "bookings", "users", column: "user_seeker_id"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
 end

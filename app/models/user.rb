@@ -7,5 +7,5 @@ class User < ApplicationRecord
   validates :location, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :is_guide, presence: true
+  validates :is_guide, inclusion: [true, false]
 end
