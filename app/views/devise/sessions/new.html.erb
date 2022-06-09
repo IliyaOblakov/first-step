@@ -3,7 +3,6 @@
     <%= image_tag "feetdown.png", class: "footsteps-up" %>
     <div class="page">
       <h2 class="signup">Log in</h2>
-
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
         <div class="form-inputs">
           <%= f.input :email,
@@ -15,18 +14,13 @@
                       input_html: { autocomplete: "current-password" } %>
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
         </div>
-
-        <div class="form-actions-2", style="width: 380px; margin: auto;">
-          <%= f.button :submit, "Log in" class="btn button" =%>
-
-          end %>
+        <div class="form-actions", style="width: 500px; margin: auto;">
+          <%= f.button :submit, "Log in", :class => "button" %>
           <br>
           <%= render "devise/shared/links" %>
         </div>
       <% end %>
-
-
     </div>
+    <%= image_tag 'feetup.png', class: "footsteps-down" %>
   </div>
-  <%= image_tag 'feetup.png', class: "footsteps-down" %>
 </div>
