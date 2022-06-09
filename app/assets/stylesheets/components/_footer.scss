@@ -182,7 +182,7 @@ justify-content: space-around;
 .socialIcons-section {
 width: 80%;
 }
-=======
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -299,11 +299,6 @@ h5 {
     width: 80%;
   }
 }
-@media only screen and (max-width: 415px) {
-  .socialIcons-section {
-    width: 80%;
-    font-size: .7em;
-  }
   .circle {
     width: 30px;
     height: 30px;
