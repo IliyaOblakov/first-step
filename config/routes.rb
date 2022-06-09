@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   # devise_for :users
    devise_for :users, controllers: { registrations: "registrations" }
   resources :bookings, only: [:new, :create, :show, :destroy]
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 end

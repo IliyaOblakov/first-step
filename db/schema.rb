@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_07_111943) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_08_114157) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,6 +24,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_07_111943) do
     t.index ["user_seeker_id"], name: "index_bookings_on_user_seeker_id"
   end
 
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -33,7 +49,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_07_111943) do
     t.string "first_name"
     t.string "last_name"
     t.string "location"
-    t.boolean "is_guide", default: false
+    t.boolean "is_guide"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -42,4 +58,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_07_111943) do
 
   add_foreign_key "bookings", "users", column: "user_guide_id"
   add_foreign_key "bookings", "users", column: "user_seeker_id"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
 end
