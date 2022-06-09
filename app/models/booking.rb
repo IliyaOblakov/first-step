@@ -4,4 +4,5 @@ class Booking < ApplicationRecord
   validates :topic, presence: true
   validates :user_guide, presence: true
   validates :user_seeker, presence: true
+  has_many :chatrooms
 end
