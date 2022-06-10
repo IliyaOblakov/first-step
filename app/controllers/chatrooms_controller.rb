@@ -3,6 +3,7 @@ class ChatroomsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
+    @user = current_user
   end
 
   def create
