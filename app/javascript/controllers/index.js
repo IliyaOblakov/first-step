@@ -5,8 +5,8 @@
 import { application } from "./application"
 
 
-// import HelloController from "./hello_controller.js"
-// application.register("hello", HelloController)
+import HelloController from "./hello_controller.js"
+application.register("hello", HelloController)
 
 import InsertFromApiController from "./insert_from_api_controller.js"
 application.register("insert-from-api", InsertFromApiController)
