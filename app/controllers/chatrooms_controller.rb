@@ -1,9 +1,13 @@
 class ChatroomsController < ApplicationController
   def show
-    @booking = Booking.find(params[:booking_id])
-    @chatroom = Chatroom.find(params[:id])
-    @message = Message.new
-    @user = current_user
+    if current_user.present?
+      @booking = Booking.find(params[:booking_id])
+      @chatroom = Chatroom.find(params[:id])
+      @message = Message.new
+      @user = current_user
+    else
+      redirect_to "/"
+    end
   end
 
   def create
