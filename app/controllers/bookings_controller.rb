@@ -26,8 +26,10 @@ class BookingsController < ApplicationController
   def my_bookings
     if current_user.present? && current_user.is_guide == true
       @my_bookings = Booking.where(user_guide_id: current_user.id)
+      @chatroom = Chatroom.new
     elsif current_user.present? && current_user.is_guide == false
       @my_bookings = Booking.where(user_seeker_id: current_user.id)
+      @chatroom = Chatroom.new
     else
       redirect_to "/"
     end
