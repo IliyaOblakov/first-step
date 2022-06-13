@@ -1,8 +1,8 @@
 <div class="pagey">
   <div class="footsteps-up">
     <%= image_tag "feetdown.png", class: "footsteps-up" %>
-    <div class="page">
-      <h2 class="signup">Log in</h2>
+    <div class="page2">
+      <h2 class="signup2"><strong>Log in</strong></h2>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
         <div class="form-inputs">
           <%= f.input :email,
@@ -15,7 +15,7 @@
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
     </div>
         <div class="form-actions", style="width: 500px; margin: auto;">
-          <%= f.button :submit, "Log in", class: "button" %>
+          <%= f.button :submit, "Log in", class: "purple-login-button text: uppercase bold" %>
           <br>
         </div>
             <% end %>

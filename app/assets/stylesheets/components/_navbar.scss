@@ -119,15 +119,21 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
   justify-items: auto;
-  padding: 30px;
+  height: 100px;
+  width: 70px;
+  margin: 10px;
+  margin-right: 15px;
 }
 
 .text-center-logo {
   font-size: 120px;
   color: #3D3253;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
-  // border: 3px solid red;
-  //text-shadow: 4px 4px 2px black;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.logo {
+  display: flex;
+  margin: 10px;
+  align-items: center;
 }

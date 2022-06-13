@@ -3,7 +3,7 @@
       <%= image_tag "feetdown.png", class: "footsteps-up" %>
         <div class="page">
 
-          <h2 class="signup">Sign up</h2>
+          <h2 class="signup"><strong>Sign up</strong></h2>
 
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
             <%= f.error_notification %>
@@ -51,7 +51,7 @@
             </div>
             <br>
             <div class="form-actions", style="width: 380px; margin: auto;">
-                <%= f.button :submit, "Sign up", :class => "button" %>
+                <%= f.button :submit, "SIGN UP", :class => "purple-login-button text: uppercase bold" %>
                 <br>
                   <%= render "devise/shared/links" %>
             </div>
