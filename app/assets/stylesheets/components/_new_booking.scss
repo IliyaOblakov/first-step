@@ -14,7 +14,7 @@
 }
 .wrapper .title {
   font-size: 24px;
-  color: #fff;
+  color: #3D3253;
   font-weight: 700;
   text-align: center;
   margin-bottom: 50px;
@@ -111,7 +111,7 @@
   width: 15px;
   height: 5px;
   border: 3px solid;
-  border-color: transparent transparent #fff #fff;
+  border-color: transparent transparent rgb(50, 9, 61) rgb(48, 16, 51);
   transform: rotate(-45deg);
 }
 .option_item .checkbox:checked ~ .option_inner .tickmark {
@@ -150,5 +150,15 @@
  font-family: Verdana, Geneva, Tahoma, sans-serif;
  font-weight: bold;
  border-style: solid;
- border-color: white;
+ border-color: rgb(12, 9, 9);
+}
+
+.test {
+  // width: 50px;
+  // height: 30px;
+  border: 2px solid red;
+}
+
+.form {
+  display: none;
 }
