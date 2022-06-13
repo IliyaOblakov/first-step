@@ -91,7 +91,6 @@
       .home-banner {
         height: 750px;
         background-size: cover;
-        margin-top: 30px;
       }
       .home-message {
         text-align: center;
@@ -120,4 +119,14 @@
 }
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  justify-items: auto;
+  padding: 30px;
+}
+
+.text-center-logo {
+  font-size: 120px;
+  color: #3D3253;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+  // border: 3px solid red;
+  //text-shadow: 4px 4px 2px black;
 }
