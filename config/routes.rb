@@ -8,4 +8,5 @@ Rails.application.routes.draw do
       resources :messages, only: :create
     end
   end
+  get "my_bookings", to: "bookings#my_bookings"
 end
