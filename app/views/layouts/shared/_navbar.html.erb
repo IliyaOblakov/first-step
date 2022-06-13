@@ -1,11 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid" style="height: 125px">
-
     <%= link_to root_path, class: "navbar-brand" do %>
-        <div class="logo">
-          <%= image_tag "feetup.png" %>
-          <div class="m-8"><h1 class="text-center-logo">First Step</h1></div>
-        </div>
+        <%# <%= image_tag "feetup.png" %>
+        <div class="m-8" ><h1 class="text-center-logo">First Step</h1></div>
     <% end %>
     <div class="button-box">
       <% if current_user.present?%>
@@ -18,7 +15,15 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
+          <%# if user_signed_in? %>
             <li class="nav-item active">
+
+
+          <%# else %>
+            <!--li class="nav-item"-->
+              <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <!--/li-->
+          <%# end %>
         </ul>
       </div>
     </div>
