@@ -106,13 +106,3 @@
     <% end %>
   </div>
 </div>
-
-<div class="container mt-3">
-<h1 class="text-center">Create a new booking</h1>
-<br>
-<p><strong>Let us help you take the first step, help is closer than you think</strong></p>
-<%= simple_form_for [@booking] do |f| %>
-  <%= f.input :topic, :collection => %w[Depression Anxiety Paranoia Eating\ disorders PTSD OCD ADHD] %>
-  <%= f.button :submit, class: "btn btn-outline-primary" %>
-<% end %>
-</div>
