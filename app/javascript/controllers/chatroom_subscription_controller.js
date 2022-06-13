@@ -20,6 +20,7 @@ export default class extends Controller {
     }
 
     resetForm(event) {
+      console.log(event)
       event.target.reset()
     }
     disconnect() {

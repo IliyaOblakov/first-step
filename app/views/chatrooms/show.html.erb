@@ -1,20 +1,23 @@
 <div class="container chatroom" data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
-  <h1><%= @chatroom.name %></h1>
-
+  <% if current_user.is_guide == true && current_user.present? %>
+    <h2><%= "#{@booking.topic}, #{@booking.user_seeker.first_name.capitalize} #{@booking.user_seeker.last_name.capitalize}" %></h2>
+  <% else %>
+    <h2>Hello <%="#{@booking.user_seeker.first_name.capitalize}, You are talking to: #{@booking.user_guide.first_name.capitalize} #{@booking.user_guide.last_name.capitalize}" %></h2>
+  <% end %>
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
       <%= render "messages/message", message: message %>
     <% end %>
   </div>
     <%= simple_form_for [@booking, @chatroom, @message],
-      html: { data: {class: "d-flex" }} do |f|
+      html: { data: {action: "turbo:submit-end->chatroom-subscription#resetForm"},class: "d-flex" } do |f|
     %>
       <%= f.input :content,
         label: false,
         placeholder: "Message ##{@chatroom.name}",
         wrapper_html: {class: "flex-grow-1"}
       %>
-      <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+      <%= f.submit "Send", class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5" %>
     <% end %>
 </div>
