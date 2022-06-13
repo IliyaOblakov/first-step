@@ -13,3 +13,6 @@ application.register("insert-from-api", InsertFromApiController)
 
 import ChatroomSubscriptionController from "./chatroom_subscription_controller.js"
 application.register("chatroom-subscription", ChatroomSubscriptionController)
+
+import CheckboxBookingsController from "./checkbox_bookings_controller.js"
+application.register("checkbox-bookings", CheckboxBookingsController)
