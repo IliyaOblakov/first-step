@@ -1,32 +1,4 @@
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="components/_index.scss" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <%# <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"> %>
-    <title>Website Homepage</title>
-   </head>
-<div class="footer-end py-2">
-        <div class="container text-center">
-          <p class="text-white footer-links">
-         👣 👣   &nbsp; | &nbsp;  <span>✉️ help@yourfirststep.com</span>  &nbsp; | &nbsp; 👣 👣
-          </p>
-          </div>
-            </div>
-        </div>
-    </div>
-      <div class="container home-nav">
-      <div class="m-8" ><h1 class="text-center">First Step</h1></div>
-          <ul class="site-menu main-menu d-flex list-unstyled justify-content-around mt-20">
-              <li><a href="#" class="btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5">HOME</a></li>
-              <li><a href="#" class="btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5">ABOUT</a></li>
-              <li><a href="#" class="btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5" >LOGIN</a></li>
-          </ul>
-      </div>
-
     <!-- hero -->
 
             <div class="home-banner" style="background-image: url('https://www.inclusionhub.com/hubfs/Blog/A%20group%20of%20people%20helping%20each%20other%20up%20the%20stairs%3B%20one%20is%20blind%2c%20one%20has%20a%20prosthetic%20leg%2c%20one%20has%20a%20prosthetic%20hand%2c%20the%20other%20has%20an%20invisible%20disability..jpg')">
@@ -111,16 +83,101 @@
             </div>
         </div>
     </section>
-           
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<% if current_user.present? == false %>
-  <%= link_to "Seek Help", new_user_registration_path( status: { status:"seeker"} ) %>
-  <%= link_to "offer help", new_user_registration_path( status: { status:"guide"} ) %>
-  <%= link_to "log in", user_session_path %>
-<% end %>
 
-<% if current_user.present?%>
-  <%= link_to "log out", destroy_user_session_path, data: {turbo_method: :delete}%>
-<% end %>
+        <div class="container-fluid mt-5 mb-0 flex-grow-1 testimonial">
+        <div class="row py-5">
+          <div class="col-lg-12  text-white text-center">
+            <p class="lead mb-0">Offering online mental health support services since 2022</p>
+            <p class="client-review-stars">
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+              </p>
+              <p>
+                  <h4>First Stepper Testimonials</h4>
+              </p>
 
+              <div class="container">
+
+                  <div id="client-testimonial-carousel" class="carousel slide" data-ride="carousel" style="height:200px;">
+                    <div class="carousel-inner" role="listbox">
+                      <div class="carousel-item active text-center text-white p-4">
+                          <p class="text-white">"I found First Step while looking for somewhere online where I could talk to someone confidentially about the problems I was facing and how to find the right therapy for me. I had no idea where to start but thanks to my First Step guide, I was able to find the right help at a time in my life when I needed it the most"
+                          </p>
+                          <h6 class="font-weight-bold">Illiya O</h6>
+
+                          <div id="client-testimonial-carousel" class="carousel slide" data-ride="carousel" style="height:200px;">
+                    <div class="carousel-inner" role="listbox">
+                      <div class="carousel-item active text-center text-white p-4">
+                          <p class="text-white">"When I was struggling with my mental health problems, I didn't have the energy or the motivation to seek help for myself. It felt too overwhelming but I knew I had to talk to someone other than my family and friends. With the help of First Step, I was able to have a private chat with someone about my options. Without First Step, I don't know if I could've reached out for help on my own"
+                          </p>
+                          <h6 class="font-weight-bold">Kunal K</h6>
+
+                      </div>
+                      </div>
+                      <div class="carousel-item text-center p-4">
+                          <p class="mb-0"> write a review here
+                          </p>
+
+
+                      </div>
+                      <div class="carousel-item text-center p-4">
+                        <blockquote class="blockquote text-center">
+                          <p class="mb-0">write a review here
+                          </p>
+                        </blockquote>
+                      </div>
+                    </div>
+                    <ol class="carousel-indicators">
+                      <li data-target="#client-testimonial-carousel" class="" data-slide-to="0" class="active"></li>
+                      <li data-target="#client-testimonial-carousel" data-slide-to="1"></li>
+                      <li data-target="#client-testimonial-carousel" data-slide-to="2"></li>
+                    </ol>
+                  </div>
+                       </p>
+                    </div>
+                  </div>
+              </div>
+
+        </div>
+      </div>
+    </div>
+<footer class="bg-footer ">
+  <div class="container py-5">
+    <div class="row py-3">
+      <footer class="footer mt-5">
+        <section class="footer-top pt-4">
+          <section class="links-section">
+            <div id="company-links" class="links-list">
+            </div>
+          </section>
+        </section>
+        <section class="footer-bottom">
+          <div class="footer-bar"></div>
+          <h4 class="join mt-2" style="color: white;">Made with ❤️ by</h6>
+          <section class="socialIcons-section">
+            <div style="display: flex; flex-direction: column; align-items: center; justify-items: center;">
+              <div class="circle"><a href="https://www.github.com/baltrock" target="_blank" class="icon"><i class="fa-brands fa-github" aria-hidden="true"></i></a></div>
+              <p style="color: white;">Ben Murphy</p>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; justify-items: center;">
+              <div class="circle"><a href="https://www.github.com/IliyaOblakov" target="_blank" class="icon"><i class="fa-brands fa-github" aria-hidden="true"></i></a></div>
+              <p style="color: white;">Iliya Oblakov </p>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; justify-items: center;">
+              <div class="circle"><a href="https://www.github.com/kunalcancode" target="_blank" class="icon"><i class="fa-brands fa-github" aria-hidden="true"></i></a></div>
+              <p style="color: white;">Kunal Kumar </p>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; justify-items: center;">
+              <div class="circle"><a href="https://www.github.com/MelissaTardivel" target="_blank" class="icon"><i class="fa-brands fa-github" aria-hidden="true"></i></a></div>
+              <p style="color: white;">Melissa Tardivel</p>
+            </div>
+          </section>
+        </section>
+
+      </footer>
+    </div>
+  </div>
+</footer>
