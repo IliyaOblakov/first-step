@@ -1,34 +1,28 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
-
 // * {
 //   margin: 0;
 //   padding: 0;
 //   box-sizing: border-box;
 //   font-family: "Montserrat", sans-serif;
 // }
-
 #feeling-page {
-  background: #3d3253!important;
+  background: #3D3253!important;
 }
-
 .wrapper {
   width: 780px;
   margin: 100px auto 0;
 }
-
 .wrapper .title {
   font-size: 24px;
-  color: #fff;
+  color: #3D3253;
   font-weight: 700;
   text-align: center;
   margin-bottom: 50px;
 }
-
 .feelings {
   display: flex;
   flex-wrap: wrap;
 }
-
 .feelings .option_item {
   display: block;
   position: relative;
@@ -36,7 +30,6 @@
   height: 175px;
   margin: 10px;
 }
-
 .feelings .option_item .checkbox {
   position: absolute;
   top: 0;
@@ -44,13 +37,11 @@
   z-index: 1;
   opacity: 0;
 }
-
 .feeling-image {
   width: 5pc;
   border-radius: 82pc;
   height: 5pc;
 }
-
 .option_item .option_inner {
   width: 100%;
   height: 100%;
@@ -58,64 +49,52 @@
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
-  color: #585c68;
+  color: #585C68;
   display: block;
   border: 5px solid transparent;
   position: relative;
 }
-
 .option_item .option_inner .icon {
   margin-bottom: 10px;
 }
-
 .option_item .option_inner .icon .fab {
   font-size: 32px;
 }
-
 .option_item .option_inner .name {
   user-select: none;
 }
-
 .option_item .checkbox:checked ~ .option_inner.facebook {
-  border-color: #ff5700;
-  color: #ff5700;
+  border-color: #FF5700;
+  color: #FF5700;
 }
-
 .option_item .checkbox:checked ~ .option_inner.twitter {
-  border-color: #ff5700;
-  color: #ff5700;
+  border-color: #FF5700;
+  color: #FF5700;
 }
-
 .option_item .checkbox:checked ~ .option_inner.instagram {
-  border-color: #ff5700;
-  color: #ff5700;
+  border-color: #FF5700;
+  color: #FF5700;
 }
-
 .option_item .checkbox:checked ~ .option_inner.linkedin {
-  border-color: #ff5700;
-  color: #ff5700;
+  border-color: #FF5700;
+  color: #FF5700;
 }
-
 .option_item .checkbox:checked ~ .option_inner.whatsapp {
-  border-color: #ff5700;
-  color: #ff5700;
+  border-color: #FF5700;
+  color: #FF5700;
 }
-
 .option_item .checkbox:checked ~ .option_inner.google {
-  border-color: #ff5700;
-  color: #ff5700;
+  border-color: #FF5700;
+  color: #FF5700;
 }
-
 .option_item .checkbox:checked ~ .option_inner.reddit {
-  border-color: #ff5700;
-  color: #ff5700;
+  border-color: #FF5700;
+  color: #FF5700;
 }
-
 .option_item .checkbox:checked ~ .option_inner.quora {
-  border-color: #ff5700;
-  color: #ff5700;
+  border-color: #FF5700;
+  color: #FF5700;
 }
-
 .option_item .option_inner .tickmark {
   position: absolute;
   top: -1px;
@@ -124,7 +103,6 @@
   border-color: #000 transparent transparent #000;
   display: none;
 }
-
 .option_item .option_inner .tickmark:before {
   content: "";
   position: absolute;
@@ -133,46 +111,36 @@
   width: 15px;
   height: 5px;
   border: 3px solid;
-  border-color: transparent transparent #fff #fff;
+  border-color: transparent transparent rgb(50, 9, 61) rgb(48, 16, 51);
   transform: rotate(-45deg);
 }
-
 .option_item .checkbox:checked ~ .option_inner .tickmark {
   display: block;
 }
-
 .option_item .option_inner.facebook .tickmark {
-  border-color: #dfc5f7 transparent transparent #dfc5f7;
+  border-color: #DFC5F7 transparent transparent #DFC5F7;
 }
-
 .option_item .option_inner.twitter .tickmark {
-  border-color: #dfc5f7 transparent transparent #dfc5f7;
+  border-color: #DFC5F7 transparent transparent #DFC5F7;
 }
-
 .option_item .option_inner.instagram .tickmark {
-  border-color: #dfc5f7 transparent transparent #dfc5f7;
+  border-color: #DFC5F7 transparent transparent #DFC5F7;
 }
-
 .option_item .option_inner.linkedin .tickmark {
-  border-color: #dfc5f7 transparent transparent #dfc5f7;
+  border-color: #DFC5F7 transparent transparent #DFC5F7;
 }
-
 .option_item .option_inner.whatsapp .tickmark {
-  border-color: #dfc5f7 transparent transparent #dfc5f7;
+  border-color: #DFC5F7 transparent transparent #DFC5F7;
 }
-
 .option_item .option_inner.google .tickmark {
-  border-color: #dfc5f7 transparent transparent #dfc5f7;
+  border-color: #DFC5F7 transparent transparent #DFC5F7;
 }
-
 .option_item .option_inner.reddit .tickmark {
-  border-color: #dfc5f7 transparent transparent #dfc5f7;
+  border-color: #DFC5F7 transparent transparent #DFC5F7;
 }
-
 .option_item .option_inner.quora .tickmark {
-  border-color: #a54ef6 transparent transparent #a54ef6;
+  border-color: #A54EF6 transparent transparent #A54EF6;
 }
-
 .button-description {
  width: 250px;
  background-color: #F26A6A;
@@ -182,5 +150,15 @@
  font-family: Verdana, Geneva, Tahoma, sans-serif;
  font-weight: bold;
  border-style: solid;
- border-color: white;
+ border-color: rgb(12, 9, 9);
+}
+
+.test {
+  // width: 50px;
+  // height: 30px;
+  border: 2px solid red;
+}
+
+.form {
+  display: none;
 }

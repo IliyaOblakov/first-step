@@ -35,9 +35,19 @@ class BookingsController < ApplicationController
     end
   end
 
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    redirect_to my_bookings_path
+  end
+
   private
 
   def booking_params
-    params.require(:booking).permit(:topic)
+    params.require(:booking).permit(:topic, :provider, :price, :url, :notes)
   end
 end
