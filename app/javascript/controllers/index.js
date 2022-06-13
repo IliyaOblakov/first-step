@@ -4,5 +4,12 @@
 
 import { application } from "./application"
 
+
+// import HelloController from "./hello_controller.js"
+// application.register("hello", HelloController)
+
+import InsertFromApiController from "./insert_from_api_controller.js"
+application.register("insert-from-api", InsertFromApiController)
+
 import ChatroomSubscriptionController from "./chatroom_subscription_controller.js"
 application.register("chatroom-subscription", ChatroomSubscriptionController)

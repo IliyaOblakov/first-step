@@ -51,7 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_09_104114) do
     t.string "first_name"
     t.string "last_name"
     t.string "location"
-    t.boolean "is_guide"
+    t.boolean "is_guide", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
