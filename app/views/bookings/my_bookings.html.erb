@@ -1,4 +1,3 @@
-
 <% @my_bookings.each do |booking|%>
   <%if current_user.is_guide == true %>
     <h1><%= "#{booking.user_seeker.first_name}  #{booking.user_seeker.last_name}" %> </h1><h1><%=  booking.topic  %></h1>
