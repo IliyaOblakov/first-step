@@ -1,12 +1,14 @@
 
 /* footer */
-
+.background {
+  height: 100vh;
+}
   #button-addon1 {
   color: #ffc371;
   }
 
   i {
-  color: #0000cc;
+  color: #F26A6A;
   font-size: 20px;}
 
   .display-3{
@@ -23,6 +25,9 @@
 
   .footer-end{
       background-color: #F26A6A;
+      // position: absolute;
+      bottom: 0;
+      width: 100%;
   }
   .gb-site{
       background-color: #F26A6A;
@@ -150,11 +155,6 @@ height: 36px;
 border-radius: 50px;
 }
 .icon {
-position: absolute;
-left: 50%;
-top: 50%;
-transform: translate(-50%, -50%);
-font-size: 1em;
 color: rgb(9, 7, 7);
 }
 .icon:hover {
@@ -298,17 +298,17 @@ h5 {
     width: 80%;
   }
 }
-@media only screen and (max-width: 415px) {
-  .socialIcons-section {
-    width: 80%;
-    font-size: .7em;
-  }
   .circle {
     width: 30px;
     height: 30px;
   }
 }
-}
+
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+
 
 .fa-brands {
   color: #f26a6a;
