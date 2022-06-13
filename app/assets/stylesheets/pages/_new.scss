@@ -33,7 +33,6 @@
 
 .form-actions {
   border-radius: 25px;
-  background-color: #d15b5b;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,7 +40,6 @@
 
 .form-actions-2 {
   border-radius: 25px;
-  background-color: #d15b5b;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -51,20 +49,20 @@
   text-align: center;
   color: bisque;
   padding: 5px;
-  background-color: #d15b5b;
   margin-left: 250px;
   margin-right: 250px;
   border-radius: 10px;
+  font-size: 40px;
 }
 
 .signup2 {
   text-align: center;
   color: bisque;
   padding: 5px;
-  background-color: #d15b5b;
   margin-left: 200px;
   margin-right: 200px;
   border-radius: 10px;
+  font-size: 40px;
 }
 
 .below {
@@ -128,3 +126,26 @@
   top: 300px;
   text-shadow: 4px 4px 2px black;
 }
+
+.purple-login-button {
+  background: #eb5656;
+  text-emphasis-style: light;
+  border-radius: 50px;
+  border-width: 10px;
+  padding: 20px;
+  color: #FFE4C4;
+  font-weight: 600;
+  border-color: #D15B5B;
+  border-style: double;
+  margin: 20px;
+  text-decoration: none;
+}
+
+.purple-login-button:hover {
+  color: #FFE4C4;
+  background-color: #3D3153;
+}
+
+
+
+// btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5
