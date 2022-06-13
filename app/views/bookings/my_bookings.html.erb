@@ -1,0 +1,23 @@
+
+<% @my_bookings.each do |booking|%>
+  <%if current_user.is_guide == true %>
+    <h1><%= "#{booking.user_seeker.first_name}  #{booking.user_seeker.last_name}" %> </h1><h1><%=  booking.topic  %></h1>
+    <%if booking.chatrooms.first.nil? %>
+      <%= simple_form_for [booking, @chatroom] do |f| %>
+      <%= f.button :submit, class: "btn btn-outline-primary" %>
+      <% end %>
+    <% else %>
+      <%= link_to "Chat now!", booking_chatroom_path(booking, booking.chatrooms.first), class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5" %>
+    <% end %>
+  <% else %>
+    <h1>Hello <%= booking.user_seeker.first_name %></h1>
+    <h1>Your guide's name is: <%= "#{booking.user_guide.first_name}  #{booking.user_guide.last_name}" %></h1>
+    <% if booking.chatrooms.first.nil? %>
+      <%= simple_form_for [booking, @chatroom] do |f| %>
+      <%= f.button :submit, class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5" %>
+      <% end %>
+    <% else %>
+      <%= link_to "Chat now!", booking_chatroom_path(booking, booking.chatrooms.first), class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5" %>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,20 +1,38 @@
 
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="components/_index.scss" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <%# <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"> %>
+    <title>Website Homepage</title>
+   </head>
+    </div>
+
+
     <!-- hero -->
 
             <div class="home-banner" style="background-image: url('https://www.inclusionhub.com/hubfs/Blog/A%20group%20of%20people%20helping%20each%20other%20up%20the%20stairs%3B%20one%20is%20blind%2c%20one%20has%20a%20prosthetic%20leg%2c%20one%20has%20a%20prosthetic%20hand%2c%20the%20other%20has%20an%20invisible%20disability..jpg')">
                   <p class="home-message">Helping you to take your first step towards better mental health</p>
             </div>
-
-            <div class="container" style="margin-top: -4pc;">
-                <div class="row p-5 top-hero text-center justify-content-around">
-                    <div class="col-md-3 col-sm-5">
-                        <a href="#" class="btn btn-block btn-pink btn-site p-5 text-uppercase cta" style="color:white">Seek Support</a>
-                    </div>
-                    <div class="col-md-3 col-sm-5">
-                        <a href="#" class="btn btn-block btn-pink btn-site p-5 text-uppercase cta" style="color:white">Offer Support</a>
-                    </div>
-                </div>
-            </div>
+            <% if current_user.present? == false %>
+              <div class="container" style="margin-top: -4pc;">
+                  <div class="row p-5 top-hero text-center justify-content-around">
+                      <div class="col-md-3 col-sm-5">
+                          <%# <a href="#" class="btn btn-block btn-pink btn-site p-5 text-uppercase cta" style="color:white">Seek Support</a> %>
+                          <%= link_to "Seek Help", new_user_registration_path( status: { status:"seeker"} ),class: "btn btn-block btn-pink btn-site p-5 text-uppercase cta", style: "color:white"%>
+                      </div>
+                      <div class="col-md-3 col-sm-5">
+                        <%= link_to "offer help", new_user_registration_path( status: { status:"guide"} ),class: "btn btn-block btn-pink btn-site p-5 text-uppercase cta", style: "color:white" %>
+                          <%# <a href="#" class="btn btn-block btn-pink btn-site p-5 text-uppercase cta" style="color:white">Offer Support</a> %>
+                      </div>
+                  </div>
+              </div>
+            <% end %>
          <section>
     <!-- end of hero -->
 
@@ -181,3 +199,4 @@
     </div>
   </div>
 </footer>
+

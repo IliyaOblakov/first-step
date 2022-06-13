@@ -1,3 +1,6 @@
+//body {
+  // background-color: #a73ea3;
+//}
 .page {
   background-color: #f79563;
   width: 800px;
@@ -59,7 +62,7 @@
 }
 
 .pagey {
-  background-color: #a73ea3;
+
   align-items: flex-start;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -86,4 +89,17 @@
   background-color: #A73EA2;
   color: antiquewhite;
   box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#010102 0 -3px 0 inset;
+}
+
+
+.home-message {
+  font-size: 45px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  // border: 3px solid red;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+  position: relative;
+  top: 300px;
+  text-shadow: 4px 4px 2px black;
 }
