@@ -28,9 +28,8 @@
       <%=link_to "Go to your booking?", booking_path(booking)  %></h1>
       </div>
     <% end %>
-  <% end %>
-  <% if current_user.is_guide == false %>
+     <% if current_user.is_guide == false %>
      <%=link_to "Create a new booking",  new_booking_path%>
   <% end %>
+  <% end %>
 </div>
-
