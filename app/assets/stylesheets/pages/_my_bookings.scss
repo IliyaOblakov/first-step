@@ -1,17 +1,38 @@
 .my-bookings{
   background-color: #3D3253;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   color: white;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   text-align: center;
+  width: 100%;
+  display: inline-block;
+  border-radius: 10px;
+}
 
+.normal {
+  width: 40%;
 }
 
 .nhs-widgets {
-  margin-bottom: 10px;
+  margin-bottom: 25px;
+  width: 50%;
+  display: inline-block;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90%;
 }
 
 .cards {
   display: grid;
+}
+
+.container-my-bookings {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.h1-my-bookings {
+  text-align: center;
 }
