@@ -3,26 +3,34 @@
   <% @my_bookings.each do |booking|%>
     <%if current_user.is_guide == true %>
       <h1>All your bookings:</h1>
-      <h1><%="#{booking.user_seeker.first_name}  #{booking.user_seeker.last_name}" %> </h1><h1><%=  booking.topic  %></h1>
-      <%=link_to "Go to your booking?", booking_path(booking)  %></h1>
-    <% else %>
-      <h1>Hello <%= booking.user_seeker.first_name %></h1>
-      <h1>Your guide's name is: <%="#{booking.user_guide.first_name}  #{booking.user_guide.last_name}"%></h1>
-      <%=link_to "Go to your booking?", booking_path(booking)  %></h1>
-    <% end %>
-  <% end %>
- </div>
- <% if current_user.is_guide == true %>
-   <div class="d-flex">
+      <div class="row">
+      <div class="col-sm-6 my-bookings">
+      <h2><%="Client: #{booking.user_seeker.first_name}  #{booking.user_seeker.last_name}" %> </h2><h2><%= "Topics: #{booking.topic}"  %></h2>
+      <%=link_to "Go to your booking", booking_path(booking), :class => "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5" %></h1>
+      </div>
+      <div class="col-sm-6" nhs-widgets>
+      <h1>Resources</h1>
       <iframe title="NHS.UK Find services widget" src="https://developer.api.nhs.uk/widgets/services/all/?uid=6c762b70-e701-11ec-b2b7-8d94d9cdcb16"
-      width="100%" height="400px" style="border: solid 1px #ccc; max-width: 500px;"></iframe>
+      width="100%" height="400px" style="border: solid 1px #ccc; max-width: 600px;"></iframe>
       <iframe title="NHS.UK Health A to Z widget" src="https://developer.api.nhs.uk/widgets/conditions?uid=6c762b70-e701-11ec-b2b7-8d94d9cdcb16"
-      width="100%" height="340px" style="border: solid 1px #ccc; max-width: 540px;"></iframe>
+      width="100%" height="400px" style="border: solid 1px #ccc; max-width: 600px;"></iframe>
       <iframe title="NHS.UK Live Well widget" src="https://developer.api.nhs.uk/widgets/live-well?uid=6c762b70-e701-11ec-b2b7-8d94d9cdcb16"
       width="100%" height="400px" style="border: solid 1px #ccc; max-width: 600px;"></iframe>
    </div>
+
+    <% else %>
+      <h1>All your bookings:</h1>
+      <hr>
+      <h2>Hello <%= booking.user_seeker.first_name %></h1>
+      <h2>Your guide's name is: <%="#{booking.user_guide.first_name}  #{booking.user_guide.last_name}"%></h1>
+      <h2>Topics: <%="#{booking.topic}"%></h1>
+
+      <%=link_to "Go to your booking?", booking_path(booking)  %></h1>
+      </div>
+    <% end %>
   <% end %>
   <% if current_user.is_guide == false %>
      <%=link_to "Create a new booking",  new_booking_path%>
   <% end %>
 </div>
+
