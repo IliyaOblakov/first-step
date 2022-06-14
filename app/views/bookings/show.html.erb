@@ -1,36 +1,50 @@
 <div class="container mt-3">
-    <% if current_user.is_guide == true %>
-      <h2><%= "Hi #{current_user.first_name}" %></h2>
-      <h2><%="#{@booking.user_seeker.first_name} #{@booking.user_seeker.first_name}" %></h2>
-      <h2><%=@booking.topic  %></h2>
-      <%= simple_form_for [@booking] do |f| %>
-        <%= f.input :provider%>
-        <%= f.input :price %>
-        <%= f.input :url %>
-        <%= f.input :notes %>
-        <%= f.button :submit, class: "btn btn-outline-primary" %>
-      <% end %>
-      <%if @booking.chatrooms.first.nil? %>
-          <%= simple_form_for [@booking, @chatroom] do |f| %>
+  <div class="booking-box">
+      <div class="card bg-card b-card">
+        <div class="card-body">
+          <img src="https://st.depositphotos.com/29690442/54793/v/380/depositphotos_547932438-stock-illustration-an-avatar-of-indian-man.jpg?forcejpeg=true" alt="" class="card-image mb-3">
+          <% if current_user.is_guide == true %>
+          <h2><%= "Hi #{current_user.first_name}" %></h2>
+          <h2><%="#{@booking.user_seeker.first_name} #{@booking.user_seeker.first_name}" %></h2>
+          <h2><%=@booking.topic  %></h2>
+          <%= simple_form_for [@booking] do |f| %>
+            <%= f.input :provider%>
+            <%= f.input :price %>
+            <%= f.input :url %>
+            <%= f.input :notes %>
             <%= f.button :submit, class: "btn btn-outline-primary" %>
           <% end %>
-      <% else %>
-            <%= link_to "Chat now!", booking_chatroom_path(@booking, @booking.chatrooms.first), class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5" %>
-      <% end %>
-    <% else %>
-      <h2>Hello <%= current_user.first_name %></h2>
-      <h2><%= "Your guide is #{@booking.user_guide.first_name} #{@booking.user_guide.last_name}" %></h2>
-      <h4> <%= @booking.notes %></h4>
-      <h4> Organisation is: <%= @booking.provider %></h4>
-      <h4>The price of the service is: <%= @booking.price %></h4>
-      <h4> you can check their website here: <%= link_to @booking.url %></h4>
-      <h4> <%if @booking.chatrooms.first.nil? %>
-          <%= simple_form_for [@booking, @chatroom] do |f| %>
-          <%= f.button :submit, class: "btn btn-outline-primary" %>
+          <%if @booking.chatrooms.first.nil? %>
+              <%= simple_form_for [@booking, @chatroom] do |f| %>
+                <%= f.button :submit, class: "btn btn-outline-primary", input_html: { class: "mb-20" } %>
+              <% end %>
+          <% else %>
+                <%= link_to "Chat now!", booking_chatroom_path(@booking, @booking.chatrooms.first), class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5 mb-20" %>
           <% end %>
-      <% else %>
-          <%= link_to "Chat now!", booking_chatroom_path(@booking, @booking.chatrooms.first), class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5" %>
-      <% end %>
-          <%= link_to "Delete Booking",booking_path(@booking),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-outline-danger"%>
-    <% end %>
+        <% else %>
+          <h2>Hello <%= current_user.first_name %></h2>
+          <h3><%= "Your guide is #{@booking.user_guide.first_name} #{@booking.user_guide.last_name}" %></h3>
+          <h4> <%= @booking.notes %></h4>
+          <h4> Organisation is: <%= @booking.provider %></h4>
+          <h4>The price of the service is: <%= @booking.price %></h4>
+          <h4> you can check their website here: <%= link_to @booking.url %></h4>
+          <h4> <%if @booking.chatrooms.first.nil? %>
+              <%= simple_form_for [@booking, @chatroom] do |f| %>
+              <%= f.button :submit, class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5 link-space" %>
+              <% end %>
+          <% else %>
+              <%= link_to "Chat now!", booking_chatroom_path(@booking, @booking.chatrooms.first), class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5 mb-10" %>
+          <% end %>
+              <%= link_to "Delete Booking",booking_path(@booking),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5" %>
+        <% end %>
+        </div>
+      </div>
+
+
+      <div>
+      <img id="b-image" src="https://mytoastlife.com/wp-content/uploads/2022/05/watercolor-tree.jpeg" alt="">
+      </div>
+
+
+  </div>
 </div>
