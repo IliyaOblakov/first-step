@@ -8,7 +8,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user_seeker_id = current_user.id
     @booking.user_guide_id = User.where(is_guide: true).sample.id
-    # raise
     @booking.save!
     redirect_to booking_path(@booking)
   end
