@@ -8,27 +8,35 @@
   margin: auto;
 }
 
-
 .message-box {
   // border: 2px solid black;
-  margin: 10px;
+  margin: 30px;
   position: relative;
   height: 70px;
 }
-.message_content {
-  // border: 2px solid red;
-  margin: 3px;
+.message_content2 {
+  background-color: #2F293A;
+  padding: 15px;
+  border-radius: 25px;
+  text-align: center;
+  width: 300px;
 }
-// .author {
-//   // border: 2px solid purple;
-// }
-// .created_at {
-// //  border: 2px solid blue;
-// }
-// .content {
-//   // border: 2px solid green;
-// }
+.author {
+  color: rgb(227, 108, 108);
+  font-size: 20px;
+ }
+.created_at {
+  color: #F4F4F4;
+  font-size: 10px;
+ }
+.content {
+  color: #F4F4F4;
+ }
 .move_right {
   position: absolute;
   right: 20px;
 }
+
+//.flex-grow-1 {
+  //border-width: 30px;
+//}
