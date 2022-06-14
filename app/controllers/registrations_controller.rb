@@ -5,7 +5,7 @@ class RegistrationsController < Devise::RegistrationsController
     if resource.is_guide == true
       :root
     elsif resource.is_guide == false
-      :new_booking
+      :root
     else
       super
     end

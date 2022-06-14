@@ -30,7 +30,7 @@
                           required: true,
                           autofocus: true,
                           input_html: { autocomplete: "location" } %>
-                <% if params[:status][:status] == "guide" %>
+                <% if params[:status][:status] == "guide"  %>
                   <%= f.input :is_guide, disabled: false,
                               required: true,
                               autofocus: true,
@@ -51,9 +51,9 @@
             </div>
             <br>
             <div class="form-actions", style="width: 380px; margin: auto;">
-                <%= f.button :submit, "SIGN IN", :class => "purple-login-button text:uppercase" %>
+                <%= f.button :submit, "SIGN UP", :class => "purple-login-button text:uppercase" %>
                 <br>
-                  <%= render "devise/shared/links" %>
+                  <%# <%= render "devise/shared/links" %>
             </div>
           <% end %>
         </div>
