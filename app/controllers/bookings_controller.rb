@@ -8,13 +8,18 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user_seeker_id = current_user.id
     @booking.user_guide_id = User.where(is_guide: true).sample.id
-    @booking.save
+    # raise
+    @booking.save!
     redirect_to booking_path(@booking)
   end
 
   def show
-    @booking = Booking.find(params[:id])
-    @chatroom = Chatroom.new
+    if current_user.present?
+      @booking = Booking.find(params[:id])
+      @chatroom = Chatroom.new
+    else
+      redirect_to "/"
+    end
   end
 
   def destroy
