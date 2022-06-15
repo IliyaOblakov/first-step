@@ -1,27 +1,40 @@
 <div class="container mt-3">
-  <div class="booking-box">
-      <div class="card bg-card b-card">
+    <% if current_user.is_guide == true %>
+    <div class="g-booking-box">
+      <div class="card bg-card g-card">
         <div class="card-body">
           <img src="https://st.depositphotos.com/29690442/54793/v/380/depositphotos_547932438-stock-illustration-an-avatar-of-indian-man.jpg?forcejpeg=true" alt="" class="card-image mb-3">
-          <% if current_user.is_guide == true %>
           <h2><%= "Hi #{current_user.first_name}" %></h2>
-          <h2><%="#{@booking.user_seeker.first_name} #{@booking.user_seeker.first_name}" %></h2>
-          <h2><%=@booking.topic  %></h2>
+        <div class="bs-info">
+          <h4 style="font-weight: 600;"><%="#{@booking.user_seeker.first_name}" %></h4>
+          <h4><%=@booking.topic  %></h4>
+        </div>
           <%= simple_form_for [@booking] do |f| %>
             <%= f.input :provider%>
             <%= f.input :price %>
             <%= f.input :url %>
             <%= f.input :notes %>
-            <%= f.button :submit, class: "btn btn-outline-primary" %>
+            <%= f.button :submit, class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5" %>
           <% end %>
           <%if @booking.chatrooms.first.nil? %>
               <%= simple_form_for [@booking, @chatroom] do |f| %>
-                <%= f.button :submit, class: "btn btn-outline-primary", input_html: { class: "mb-20" } %>
+                <%= f.button :submit, class: "btn btn-outline-primary", input_html: { class: "mb-20 btn btn-pink text-light text-uppercase rounded-pill " } %>
               <% end %>
           <% else %>
-                <%= link_to "Chat now!", booking_chatroom_path(@booking, @booking.chatrooms.first), class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5 mb-20" %>
+                <%= link_to "Chat now!", booking_chatroom_path(@booking, @booking.chatrooms.first), class: "btn btn-pink text-light text-uppercase rounded-pill g-chat-now fw-bold py-3 px-5 mb-20" %>
           <% end %>
-        <% else %>
+          </div>
+      </div>
+      <div>
+        <img id="b-image" src="https://stevebarby73672784204.files.wordpress.com/2021/02/cropped-imgbin_hand-heart-logo-png.png?w=930" alt="">
+      </div>
+    </div>
+    <% else %>
+    <div class="s-booking-box">
+      <div class="card bg-card s-card">
+        <div class="card-body">
+          <img src="https://st.depositphotos.com/29690442/54793/v/380/depositphotos_547932438-stock-illustration-an-avatar-of-indian-man.jpg?forcejpeg=true" alt="" class="card-image mb-3">
+
           <h2>Hello <%= current_user.first_name %></h2>
           <h3><%= "Your guide is #{@booking.user_guide.first_name} #{@booking.user_guide.last_name}" %></h3>
           <h4> <%= @booking.notes %></h4>
@@ -36,13 +49,15 @@
               <%= link_to "Chat now!", booking_chatroom_path(@booking, @booking.chatrooms.first), class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5 mb-10 button-spacing" %>
           <% end %>
               <%= link_to "Delete Booking",booking_path(@booking),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5 button-spacing" %>
-        <% end %>
         </div>
       </div>
 
-
       <div>
-      <img id="b-image" src="https://stevebarby73672784204.files.wordpress.com/2021/02/cropped-imgbin_hand-heart-logo-png.png?w=930" alt="">
+        <img id="b-image" src="https://stevebarby73672784204.files.wordpress.com/2021/02/cropped-imgbin_hand-heart-logo-png.png?w=930" alt="">
       </div>
-  </div>
+    </div>
+
+    <% end %>
+
+
 </div>
