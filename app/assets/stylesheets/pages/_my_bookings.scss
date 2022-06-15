@@ -1,9 +1,9 @@
 .my-bookings{
-  background-color: #3D3253;
-  padding-top: 20px;
+  background-color: #E6D8D3;
+  padding-top: 40px;
   padding-bottom: 20px;
-  color: white;
   margin-bottom: 20px;
+  margin-top: 30px;
   text-align: center;
   width: 100%;
   display: inline-block;
@@ -12,9 +12,11 @@
 
 .normal {
   width: 40%;
+
 }
 
 .nhs-widgets {
+  margin-top: 30px;
   margin-bottom: 25px;
   width: 50%;
   display: inline-block;
@@ -31,8 +33,18 @@
   display: flex;
   justify-content: space-evenly;
   width: 100%;
+  background-color: #957BC8;
 }
 
 .h1-my-bookings {
   text-align: center;
+}
+
+.resources-h2 {
+  background-color: #E6D8D3;
+  width: 600px;
+  border-radius: 10px;
+  text-align: center;
+  padding-top:10px;
+  padding-bottom:10px;
 }
