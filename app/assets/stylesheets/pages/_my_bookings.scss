@@ -25,6 +25,11 @@
   justify-content: space-between;
   height: 90%;
   border-radius: 10px;
+  margin-right: -25px; // added for my_bookings page
+}
+
+.nhs-widgets iframe {
+ margin-bottom: 34px;
 }
 
 .cards {
@@ -34,15 +39,24 @@
 .container-my-bookings {
   display: flex;
   justify-content: space-evenly;
+}
+
+.mb-container {
   width: 100%;
   background-color: #957BC8;
   border-radius: 1pc;
   padding: 20px;
   margin-bottom: 20px;
+  margin-top: 28px;
+
 }
 
 .h1-my-bookings {
   text-align: center;
+  color: white;
+  font-size: 45px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-shadow: 4px 4px 2px #3D3253;
 }
 
 .resources-h2 {
@@ -56,4 +70,6 @@
 
 .create-booking-button {
   text-align: center;
+  font-size: 20px !important;
+  padding: 20px !important;
 }
