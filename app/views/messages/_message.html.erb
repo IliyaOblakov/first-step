@@ -1,6 +1,7 @@
-<% move_right = message.user.first_name == @user.first_name ? "move_right" : "" %>
-<% user_seeker_color = message.user.first_name == @user.first_name ? "user_seeker" : "" %>
-<div id="message-<%= message.id %>" class="message_box <%= move_right %>">
+<%# <% move_right = message.user.first_name == @user.first_name ? "move_right" : "" %>
+<%# <% user_seeker_color = message.user.first_name == @user.first_name ? "user_seeker" : "" %> %> %>
+<div class="d-flex justify-content-end">
+<div id="message-<%= message.id %>">
     <div class = "message_content2 <%=user_seeker_color%>" >
     <small>
       <span class="author"> <strong><%= message.user.first_name %></strong> </span>
@@ -9,4 +10,5 @@
     <p class="content"><%= message.content %></p>
   </div>
 <br>
+</div>
 </div>
