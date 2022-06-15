@@ -12,6 +12,7 @@
 
 .normal {
   width: 40%;
+  margin-right: 20px;
 
 }
 
@@ -23,6 +24,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 90%;
+  border-radius: 10px;
 }
 
 .cards {
@@ -34,6 +36,9 @@
   justify-content: space-evenly;
   width: 100%;
   background-color: #957BC8;
+  border-radius: 1pc;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
 .h1-my-bookings {
@@ -43,8 +48,12 @@
 .resources-h2 {
   background-color: #E6D8D3;
   width: 600px;
-  border-radius: 10px;
+  border-radius: 4px;
   text-align: center;
   padding-top:10px;
   padding-bottom:10px;
+}
+
+.create-booking-button {
+  text-align: center;
 }
