@@ -1,42 +1,42 @@
-.background {
-  background-color: #F26A6A;
-  padding: 30px;
-}
 .big {
   justify-content: center;
   justify-self: center;
   margin: auto;
 }
 
-.message-box {
-  // border: 2px solid black;
-  margin: 30px;
+.message_box {
   position: relative;
-  height: 70px;
+  display: flex;
+  margin-bottom: 15px;
 }
 .message_content2 {
-  background-color: #2F293A;
+  background-color: #e4daf8;
   padding: 15px;
   border-radius: 25px;
   text-align: center;
-  width: 300px;
-}
-.author {
-  color: rgb(227, 108, 108);
-  font-size: 20px;
- }
-.created_at {
-  color: #F4F4F4;
-  font-size: 10px;
- }
-.content {
-  color: #F4F4F4;
- }
-.move_right {
-  position: absolute;
-  right: 20px;
+  width: 45%;
 }
 
-//.flex-grow-1 {
-  //border-width: 30px;
-//}
+.author {
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+ }
+.created_at {
+  color: black;
+  font-size: 12px;
+ }
+.content {
+  color: black;
+ }
+
+.move_right {
+  display: flex;
+  margin-bottom: 15px;
+  justify-content: flex-end;
+}
+
+.user_seeker{
+  background-color: #efbfbf;
+  position: relative;
+  right: 5px;
+}

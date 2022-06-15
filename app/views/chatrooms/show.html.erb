@@ -1,26 +1,27 @@
-<div class="container chatroom" data-controller="chatroom-subscription"
-  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
-  <br>
-  <% if current_user.is_guide == true && current_user.present? %>
-    <h2><%= "#{@booking.topic}, #{@booking.user_seeker.first_name.capitalize} #{@booking.user_seeker.last_name.capitalize}" %></h2>
-  <% else %>
-    <h2>Hello <%="#{@booking.user_seeker.first_name.capitalize}, You are talking to: #{@booking.user_guide.first_name.capitalize} #{@booking.user_guide.last_name.capitalize}" %></h2>
-  <% end %>
-  <hr>
-  <div class="messages" data-chatroom-subscription-target="messages">
-    <% @chatroom.messages.each do |message| %>
-      <%= render "messages/message", message: message %>
+<div class="background">
+  <div class="container chatroom" data-controller="chatroom-subscription"
+    data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
+    <br>
+    <% if current_user.is_guide == true && current_user.present? %>
+      <h2><%= "#{@booking.topic}, #{@booking.user_seeker.first_name.capitalize} #{@booking.user_seeker.last_name.capitalize}" %></h2>
+    <% else %>
+      <h2>Hello <%="#{@booking.user_seeker.first_name.capitalize}, You are talking to: #{@booking.user_guide.first_name.capitalize} #{@booking.user_guide.last_name.capitalize}" %></h2>
     <% end %>
-  </div>
-    <%= simple_form_for [@booking, @chatroom, @message],
-      html: { data: {action: "turbo:submit-end->chatroom-subscription#resetForm"},class: "d-flex" } do |f|
-    %>
-      <%= f.input :content,
-        label: false,
-        placeholder: "Message ##{@chatroom.name}",
-        wrapper_html: {class: "flex-grow-1"}
+    <hr>
+    <div class="messages" data-chatroom-subscription-target="messages">
+      <% @chatroom.messages.each do |message| %>
+        <%= render "messages/message", message: message %>
+      <% end %>
+    </div>
+      <%= simple_form_for [@booking, @chatroom, @message],
+        html: { data: {action: "turbo:submit-end->chatroom-subscription#resetForm"},class: "d-flex" } do |f|
       %>
-      <%= f.submit "Send", class: "ms-2 btn btn-pink text-light text-uppercase rounded-pill fw-bold px-5" %>
-    <% end %>
+        <%= f.input :content,
+          label: false,
+          placeholder: "Message ##{@chatroom.name}",
+          wrapper_html: {class: "flex-grow-1"}
+        %>
+        <%= f.submit "Send", class: "ms-3 btn btn-pink text-light text-uppercase rounded-pill fw-bold px-5" %>
+      <% end %>
+  </div>
 </div>
-<br>
