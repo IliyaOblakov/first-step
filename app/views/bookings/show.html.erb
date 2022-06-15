@@ -6,7 +6,7 @@
           <img src="https://st.depositphotos.com/29690442/54793/v/380/depositphotos_547932438-stock-illustration-an-avatar-of-indian-man.jpg?forcejpeg=true" alt="" class="card-image mb-3">
           <h2><%= "Hi #{current_user.first_name}" %></h2>
         <div class="bs-info">
-          <h4 style="font-weight: 600;"><%="#{@booking.user_seeker.first_name}" %></h4>
+          <h4 style="font-weight: 600;"><%="#{@booking.user_seeker.first_name} #{@booking.user_seeker.last_name}" %></h4>
           <h4><%=@booking.topic  %></h4>
         </div>
           <%= simple_form_for [@booking] do |f| %>
@@ -37,10 +37,12 @@
 
           <h2>Hello <%= current_user.first_name %></h2>
           <h3><%= "Your guide is #{@booking.user_guide.first_name} #{@booking.user_guide.last_name}" %></h3>
-          <h4> <%= @booking.notes %></h4>
-          <h4> Organisation is: <%= @booking.provider %></h4>
-          <h4>The price of the service is: <%= @booking.price %></h4>
-          <h4> you can check their website here: <%= link_to @booking.url %></h4>
+          <% if @booking.notes.present? && @booking.provider.present? && @booking.price.present? && @booking.url.present? %>
+              <h4> <%= @booking.notes %></h4>
+              <h4> Organisation is: <%= @booking.provider %></h4>
+              <h4>The price of the service is: <%= @booking.price %></h4>
+              <h4> you can check their website here: <%= link_to @booking.url, "http://#{@booking.url}", target: "_blank" %></h4>
+          <%end %>
           <h4> <%if @booking.chatrooms.first.nil? %>
               <%= simple_form_for [@booking, @chatroom] do |f| %>
               <%= f.button :submit, class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5 link-space" %>
