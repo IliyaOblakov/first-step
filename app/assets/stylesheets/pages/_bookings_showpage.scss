@@ -2,7 +2,7 @@
   margin-bottom: 20px;
 }
 
-.booking-box {
+.s-booking-box {
 display: flex;
  background: #957bc8;
  margin-bottom: 20px;
@@ -16,7 +16,7 @@ display: flex;
  margin-left: calc(-.5 * var(--bs-gutter-x));
 }
 
-.b-card{
+.s-card{
   background: #e7d8d3;
   padding: 4px;
   text-align: center;
@@ -26,6 +26,36 @@ display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 7px;
+}
+
+.g-booking-box {
+  display: flex;
+   background: #957bc8;
+   margin-bottom: 20px;
+   border-radius: 1pc;
+   height: 930px;
+   align-items: center;
+   padding: 20px;
+   justify-content: space-around;
+   margin-top: calc(-1 * var(--bs-gutter-y));
+   margin-right: calc(-.5 * var(--bs-gutter-x));
+   margin-left: calc(-.5 * var(--bs-gutter-x));
+  }
+
+.g-card{
+  background: #e7d8d3;
+  padding: 4px;
+  text-align: center;
+  height: 815px;
+  width: 430px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 7px;
+}
+
+.g-chat-now {
+  margin-top: 15px;
 }
 
 #b-image {
@@ -41,4 +71,12 @@ display: flex;
 
 .button-spacing {
   margin-top: 10px;
+}
+
+.bs-info {
+  background: #3D3253;
+  padding: 5px;
+  border-radius: 22px;
+  margin-bottom: 18px;
+  color: white;
 }
