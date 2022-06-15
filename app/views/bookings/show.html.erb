@@ -18,7 +18,7 @@
           <% end %>
           <%if @booking.chatrooms.first.nil? %>
               <%= simple_form_for [@booking, @chatroom] do |f| %>
-                <%= f.button :submit, class: "btn btn-outline-primary", input_html: { class: "mb-20 btn btn-pink text-light text-uppercase rounded-pill " } %>
+                <%= f.button :submit, value: "Chat now!", class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5 link-space button-spacing", input_html: { class: "mb-20 btn btn-pink text-light text-uppercase rounded-pill " } %>
               <% end %>
           <% else %>
                 <%= link_to "Chat now!", booking_chatroom_path(@booking, @booking.chatrooms.first), class: "btn btn-pink text-light text-uppercase rounded-pill g-chat-now fw-bold py-3 px-5 mb-20" %>
@@ -34,9 +34,10 @@
       <div class="card bg-card s-card">
         <div class="card-body">
           <img src="https://st.depositphotos.com/29690442/54793/v/380/depositphotos_547932438-stock-illustration-an-avatar-of-indian-man.jpg?forcejpeg=true" alt="" class="card-image mb-3">
-
+              <div class="ab-info">
           <h2>Hello <%= current_user.first_name %></h2>
           <h3><%= "Your guide is #{@booking.user_guide.first_name} #{@booking.user_guide.last_name}" %></h3>
+          </div>
           <% if @booking.notes.present? && @booking.provider.present? && @booking.price.present? && @booking.url.present? %>
               <h4> <%= @booking.notes %></h4>
               <h4> Organisation is: <%= @booking.provider %></h4>
@@ -45,7 +46,7 @@
           <%end %>
           <h4> <%if @booking.chatrooms.first.nil? %>
               <%= simple_form_for [@booking, @chatroom] do |f| %>
-              <%= f.button :submit, class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5 link-space" %>
+              <%= f.button :submit, value: "Chat now!", class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5 link-space" %>
               <% end %>
           <% else %>
               <%= link_to "Chat now!", booking_chatroom_path(@booking, @booking.chatrooms.first), class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5 mb-10 button-spacing" %>
