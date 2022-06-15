@@ -33,18 +33,16 @@
               <%= f.button :submit, class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5 link-space" %>
               <% end %>
           <% else %>
-              <%= link_to "Chat now!", booking_chatroom_path(@booking, @booking.chatrooms.first), class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5 mb-10" %>
+              <%= link_to "Chat now!", booking_chatroom_path(@booking, @booking.chatrooms.first), class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5 mb-10 button-spacing" %>
           <% end %>
-              <%= link_to "Delete Booking",booking_path(@booking),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5" %>
+              <%= link_to "Delete Booking",booking_path(@booking),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5 button-spacing" %>
         <% end %>
         </div>
       </div>
 
 
       <div>
-      <img id="b-image" src="https://mytoastlife.com/wp-content/uploads/2022/05/watercolor-tree.jpeg" alt="">
+      <img id="b-image" src="https://stevebarby73672784204.files.wordpress.com/2021/02/cropped-imgbin_hand-heart-logo-png.png?w=930" alt="">
       </div>
-
-
   </div>
 </div>

@@ -31,4 +31,14 @@ display: flex;
 #b-image {
   width: 500px;
   height: 500px;
+  border-radius: 15px;
+}
+
+#health-quote {
+  font-family: 'cursive', Courier, monospace;
+  font-size: 30px;
+}
+
+.button-spacing {
+  margin-top: 10px;
 }
