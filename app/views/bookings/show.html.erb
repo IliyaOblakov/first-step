@@ -18,7 +18,8 @@
 
           <% end %>
           <%if @booking.chatrooms.first.nil? %>
-           <h4><%= "Chatroom not yet created by: #{@booking.user_seeker.first_name.capitalize}" %></h4>
+          <br>
+           <h4 style="font-family: 'Raleway', sans-serif !important;"><%= "Chatroom not yet created by: #{@booking.user_seeker.first_name.capitalize}" %></h4>
           <% else %>
                 <%= link_to "Chat now!", booking_chatroom_path(@booking, @booking.chatrooms.first), class: "btn btn-pink text-light text-uppercase rounded-pill g-chat-now fw-bold py-3 px-5 mb-20" %>
           <% end %>
