@@ -3,9 +3,11 @@
     data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
     <br>
     <% if current_user.is_guide == true && current_user.present? %>
-      <h2><%= "#{@booking.topic}, #{@booking.user_seeker.first_name.capitalize} #{@booking.user_seeker.last_name.capitalize}" %></h2>
+      <h2 data-chatroom-subscription-target="chatroom_title"><%= "#{@booking.topic}, #{@booking.user_seeker.first_name.capitalize} #{@booking.user_seeker.last_name.capitalize}" %></h2>
+      <p data-chatroom-subscription-target="guide" style="display:none;" ><%= current_user.first_name  %></p>
     <% else %>
-      <h2>Hello <%="#{@booking.user_seeker.first_name.capitalize}, You are talking to: #{@booking.user_guide.first_name.capitalize} #{@booking.user_guide.last_name.capitalize}" %></h2>
+      <p data-chatroom-subscription-target="guide" style="display:none;" ><%= current_user.first_name  %></p>
+      <h2 data-chatroom-subscription-target="chatroom_title">Hello <%="#{@booking.user_seeker.first_name.capitalize}, You are talking to: #{@booking.user_guide.first_name.capitalize} #{@booking.user_guide.last_name.capitalize}" %></h2>
     <% end %>
     <hr>
     <div class="messages" data-chatroom-subscription-target="messages">
