@@ -15,6 +15,7 @@
             <%= f.input :url %>
             <%= f.input :notes %>
             <%= f.button :submit, value: "Update", class: "btn btn-outline-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5 button-spacing" %>
+
           <% end %>
           <%if @booking.chatrooms.first.nil? %>
               <%= simple_form_for [@booking, @chatroom] do |f| %>
@@ -52,6 +53,7 @@
               <%= link_to "Chat now!", booking_chatroom_path(@booking, @booking.chatrooms.first), class: "btn btn-pink text-light text-uppercase rounded-pill fw-bold py-3 px-5 mb-10 button-spacing" %>
           <% end %>
               <%= link_to "Delete",booking_path(@booking),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-pink text-light rounded-pill button-spacing mb-10" %>
+
         </div>
       </div>
 
