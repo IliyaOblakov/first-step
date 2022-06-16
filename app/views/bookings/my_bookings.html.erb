@@ -17,8 +17,8 @@
           <%=link_to "Booking page", booking_path(booking), :class => "btn btn-pink text-light text-uppercase rounded-pill fw-bold"  %>
         <% else %>
          <div class="sb-info">
-          <h3>Hello <%= booking.user_seeker.first_name %></h3>
-          <h3>Your guide's name is: <%="#{booking.user_guide.first_name}  #{booking.user_guide.last_name}"%></h3>
+          <h3 style="font-family: 'Raleway', sans-serif !important;">Hello <%= booking.user_seeker.first_name %></h3>
+          <h3 style="font-family: 'Raleway', sans-serif !important;">Your guide's name is: <%="#{booking.user_guide.first_name}  #{booking.user_guide.last_name}"%></h3>
           </div>
           <h5><%= "Topic: #{booking.topic}"  %></h5>
           <h5><%= "Created on: #{booking.created_at.day}/#{booking.created_at.month}/#{booking.created_at.year}"  %></h3>
