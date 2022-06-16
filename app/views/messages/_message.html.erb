@@ -1,9 +1,7 @@
-<% move_right = message.user.first_name == @user.first_name ? "move_right" : "" %>
-<% user_seeker_color = message.user.first_name == @user.first_name ? "user_seeker" : "" %>
-<div id="message-<%= message.id %>" class="message_box <%= move_right %>">
-    <div class = "message_content2 <%=user_seeker_color%>" >
+<div id="message-<%= message.id %>" class="messages_container">
+    <div class = "message_content2" >
     <small>
-      <span class="author"> <strong><%= message.user.first_name %></strong> </span>
+      <span class="author" data-chatroom-subscription-target="authors"> <strong><%= message.user.first_name%></strong></span>
       <i class="created_at"><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
     </small>
     <p class="content"><%= message.content %></p>
