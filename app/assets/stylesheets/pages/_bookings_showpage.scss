@@ -20,7 +20,7 @@ display: flex;
   background: #e7d8d3;
   padding: 4px;
   text-align: center;
-  min-height: 608px;
+  min-height: 400px;
   width: 430px;
   display: flex;
   flex-direction: column;
@@ -100,4 +100,10 @@ display: flex;
   width: 480px;
   margin: auto;
   margin-bottom: 20px;
+}
+
+
+.new-font {
+  font-family: 'Satisfy', cursive;
+  font-family: 'Ubuntu', sans-serif;
 }
