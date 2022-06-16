@@ -4,7 +4,7 @@
       <div class="card bg-card g-card">
         <div class="card-body">
           <img src="https://st.depositphotos.com/29690442/54793/v/380/depositphotos_547932438-stock-illustration-an-avatar-of-indian-man.jpg?forcejpeg=true" alt="" class="card-image mb-3">
-          <h2><%= "Hi #{current_user.first_name}" %></h2>
+          <h2 ><%= "Hi #{current_user.first_name}" %></h2>
         <div class="bs-info">
           <h4 style="font-weight: 600;"><%="#{@booking.user_seeker.first_name} #{@booking.user_seeker.last_name}" %></h4>
           <h4><%=@booking.topic  %></h4>
@@ -36,14 +36,14 @@
         <div class="card-body">
           <img src="https://st.depositphotos.com/29690442/54793/v/380/depositphotos_547932438-stock-illustration-an-avatar-of-indian-man.jpg?forcejpeg=true" alt="" class="card-image mb-3">
               <div class="ab-info">
-          <h2>Hello <%= current_user.first_name %></h2>
-          <h3><%= "Your guide is #{@booking.user_guide.first_name} #{@booking.user_guide.last_name}" %></h3>
+          <h2 style="font-family: 'Raleway', sans-serif !important;">Hello <%= current_user.first_name %></h2>
+          <h3 style="font-family: 'Raleway', sans-serif !important;"><%= "Your guide is #{@booking.user_guide.first_name} #{@booking.user_guide.last_name}" %></h3>
           </div>
           <% if @booking.notes.present? && @booking.provider.present? && @booking.price.present? && @booking.url.present? %>
-              <h4> <strong> Organisation: </strong><%= @booking.provider %></h4>
-              <h4> <strong> Price: </strong><%= @booking.price %></h4>
-              <h4> <strong> Website: </strong> <%= link_to @booking.url, "http://#{@booking.url}", target: "_blank" %></h4>
-              <h4> <strong> Notes: </strong> <%= @booking.notes %></h4>
+              <h4 style="font-family: 'Raleway', sans-serif !important;"> <strong> Organisation: </strong><%= @booking.provider %></h4>
+              <h4 style="font-family: 'Raleway', sans-serif !important;"> <strong> Price: </strong><%= @booking.price %></h4>
+              <h4 style="font-family: 'Raleway', sans-serif !important;"> <strong> Website: </strong> <%= link_to @booking.url, "http://#{@booking.url}", target: "_blank" %></h4>
+              <h4 style="font-family: 'Raleway', sans-serif !important;"> <strong> Notes: </strong> <%= @booking.notes %></h4>
           <%end %>
           <h4> <%if @booking.chatrooms.first.nil? %>
               <%= simple_form_for [@booking, @chatroom] do |f| %>
